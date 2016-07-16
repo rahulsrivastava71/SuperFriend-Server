@@ -144,7 +144,7 @@ Launching UI Tests from your IDE :
 License
 -------
 
-Copyright © 2012-2015 [Ippon Technologies](http://www.ippon.fr)
+Copyright © 2012-2015 [SuperFriend.com]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this application except in compliance with the License.
