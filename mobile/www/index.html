@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <meta http-equiv="Content-Security-Policy" content="*">
+        <title></title>
+
+        <link href="lib/ionic/release/css/ionic.min.css" rel="stylesheet">
+        <link href="css/style.min.css" rel="stylesheet">
+
+    <!-- compiled css output -->
+        <link href="css/ionic.app.css" rel="stylesheet">
+
+        <!-- ionic/angularjs js -->
+        <script src="lib/ionic/release/js/ionic.bundle.js"></script>
+        <script src="lib/angular-resource/angular-resource.js"></script>
+        <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+        <script src="lib/angular-marked/dist/angular-marked.js"></script>
+        <script src="lib/angular-translate/angular-translate.js"></script>
+        <script src="lib/messageformat/messageformat.js"></script>
+        <script src="lib/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
+        <script src="lib/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="cordova.js"></script>
+
+        <!-- your app's js -->
+        <script src="app/tatamiApp.js"></script>
+        <script src="app/tatami.endpoint.js"></script>
+        <script src="app/tatami.controller.js"></script>
+
+        <script src="app/components/login/login.js"></script>
+        <script src="app/components/login/login.controller.js"></script>
+
+        <script src="app/components/login/server/server.js"></script>
+        <script src="app/components/login/server/server.controller.js"></script>
+
+        <script src="app/components/home/home.js"></script>
+        <script src="app/components/home/timeline/timeline.js"></script>
+        <script src="app/components/home/timeline/timeline.controller.js"></script>
+        <script src="app/components/home/mentions/mentions.js"></script>
+        <script src="app/components/home/mentions/mentions.controller.js"></script>
+        <script src="app/components/home/favorites/favorites.js"></script>
+        <script src="app/components/home/favorites/favorites.controller.js"></script>
+
+        <script src="app/components/home/more/more.js"></script>
+        <script src="app/components/home/more/more.controller.js"></script>
+        <script src="app/components/home/more/company/company.timeline.js"></script>
+        <script src="app/components/home/more/company/company.timeline.controller.js"></script>
+        <script src="app/components/home/more/settings/settings.js"></script>
+        <script src="app/components/home/more/settings/settings.controller.js"></script>
+        <script src="app/components/home/more/blocked_users/blocked.users.js"></script>
+        <script src="app/components/home/more/blocked_users/blocked.users.controller.js"></script>
+
+        <script src="app/components/follow/follow.js"></script>
+        <script src="app/components/follow/suggested/suggested.js"></script>
+        <script src="app/components/follow/suggested/suggested.controller.js"></script>
+        <script src="app/components/follow/follower/follower.js"></script>
+        <script src="app/components/follow/follower/follower.controller.js"></script>
+        <script src="app/components/follow/following/following.js"></script>
+        <script src="app/components/follow/following/following.controller.js"></script>
+
+        <script src="app/components/post/post.js"></script>
+        <script src="app/components/post/post.controller.js"></script>
+
+        <script src="app/shared/providers/provider.js"></script>
+        <script src="app/shared/providers/tatami.state.provider.js"></script>
+
+        <script src="app/shared/interceptor/auth.interceptor.js"></script>
+
+        <script src="app/shared/services/service.js"></script>
+        <script src="app/shared/services/StatusService.js"></script>
+        <script src="app/shared/services/ProfileService.js"></script>
+        <script src="app/shared/services/UserService.js"></script>
+        <script src="app/shared/services/HomeService.js"></script>
+        <script src="app/shared/services/path.service.js"></script>
+        <script src="app/shared/services/localStorage.service.js"></script>
+        <script src="app/shared/services/tag.service.js"></script>
+        <script src="app/shared/services/block.service.js"></script>
+
+        <script src="app/shared/state/profile/profile.controller.js"></script>
+        <script src="app/shared/state/conversation/conversation.controller.js"></script>
+        <script src="app/shared/state/tag/tag.controller.js"></script>
+
+        <script src="app/shared/status/list/status.list.directive.js"></script>
+        <script src="app/shared/status/status.directive.js"></script>
+        <script src="app/shared/status/status.refresher.service.js"></script>
+        <script src="app/shared/user/user.refresher.service.js"></script>
+        <script src="app/shared/user/user.directive.js"></script>
+        <script src="app/shared/user/user.detail.directive.js"></script>
+        <script src="app/components/post/postbar.directive.js"></script>
+
+        <script src="app/shared/config/tatami.marked.js"></script>
+        <script src="app/shared/config/marked.filter.js"></script>
+        <script src="app/shared/config/marked.config.js"></script>
+    </head>
+    <body ng-app="tatami">
+        <!--
+          The nav bar that will be updated as we navigate between views.
+        -->
+        <ion-nav-view></ion-nav-view>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+<ion-view view-title="{{ 'tab.suggested.who' | translate }}">
+    <ion-content>
+        <ion-refresh on-refresh="vm.getNewSuggested()"></ion-refresh>
+        <ion-list>
+            <div ng-repeat="user in vm.suggested">
+                <tatami-user user="user"></tatami-user>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

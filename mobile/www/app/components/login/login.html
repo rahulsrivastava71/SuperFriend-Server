@@ -1,0 +1,56 @@
+<ion-view name="login-view" view-title="{{ 'login.title' | translate }}" hide-back-button="true">
+    <ion-content class="has-header has-subheader" scroll="false">
+        <div class="list list-inset">
+            {{ 'login.endpoint.current' | translate }} {{ vm.endpoint | limitTo: 23 }}{{vm.endpoint.length > 23 ? '...' : ''}}
+            <button class="item-button-right button button-small"
+                    ng-click="vm.goToServerConfig()">
+                <span>{{ 'login.endpoint.modify' | translate }}</span>
+            </button>
+        </div>
+        <form ng-submit="vm.login()">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="{{ 'login.email' | translate }}" ng-model="vm.user.email">
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="{{ 'login.password' | translate }}" ng-model="vm.user.password">
+                </label>
+            </div>
+
+            <div align="center">
+                <label class="toggle v-align">
+                    <input type="checkbox" ng-model="vm.tos">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+                <span translate="login.accept"></span>
+                <a href="http://app.tatamisoft.com/#/about/tos" translate="login.tos"></a>
+            </div>
+            <div class="padding">
+                <button ng-disabled="!vm.user.email && !vm.user.password || !vm.tos"
+                        translate="login.title"
+                        class="button button-block button-calm"
+                        type="submit">
+                    Login
+                </button>
+            </div>
+            <div class="padding">
+                <button ng-disabled="!vm.tos || !vm.clientId"
+                        ng-click="vm.googleLogin()"
+                        translate="login.google"
+                        class="button button-block button-stable"
+                        type="button">
+                    Google Login
+                </button>
+            </div>
+
+            <div ng-show="vm.failed" class="bar bar-assertive">
+                <h1 class="title" translate="login.failed">Failed to log in!</h1>
+            </div>
+            <div ng-show="!vm.clientId" class="bar bar-assertive">
+                <h1 class="title" translate="login.googleUnavaible"></h1>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,18 @@
+<ion-view view-title="@{{ vm.user.username }}">
+    <ion-nav-buttons side="secondary">
+        <button class="button ion-person-add"
+                ng-if="!vm.isCurrentUser"
+                ng-class="{ 'button-calm' : vm.user.friend, 'button-stable button-outline' : !vm.user.friend }"
+                style="font-size: 30px;"
+                ng-click="vm.followUser()"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-refresher on-refresh="vm.getNewStatuses()"></ion-refresher>
+        <tatami-user-detail user="vm.user"></tatami-user-detail>
+        <ion-list>
+            <ion-item ng-repeat="status in vm.statuses">
+                <tatami-status status="status" current-user="vm.currentUser"></tatami-status>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

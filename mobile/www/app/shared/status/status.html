@@ -1,0 +1,48 @@
+<span>
+    <div class="item-avatar item-text-wrap tatami-avatar">
+        <img ng-src="{{ vm.status.avatarURL }}"/>
+        <p ng-if="status.type == 'SHARE'">
+            <span class="ion-share">&nbsp;</span>
+            <a ng-click="vm.goToProfile(vm.status.sharedByUsername)">
+                <span class="text-muted">@{{ vm.status.sharedByUsername }}</span>
+            </a>
+            <span translate="status.share.title">share</span>
+            <br>
+        </p>
+
+        <div class="profile-name">
+            <a ng-click="vm.goToProfile(vm.status.username)">
+                <h2 class="inline">{{vm.status.firstName}} {{vm.status.lastName}}</h2>
+                <span class="inline subheading">&nbsp;&#183; @{{vm.status.username}}</span>
+            </a>
+            <p class="date">{{vm.status.prettyPrintStatusDate}}</p>
+            <p ng-if="status.groupId">{{ status.groupName }}</p>
+        </div>
+    </div>
+
+    <div class="item-body item-text-wrap">
+        <span ng-if="vm.status.type == 'MENTION_SHARE'" class="ion-share">&nbsp;</span>
+        <span ng-if="vm.status.type == 'MENTION_FRIEND'" class="ion-person">&nbsp;</span>
+        <span ng-if="status.type == 'MENTION_SHARE'" translate="status.share.mention">Your status has been shared</span>
+        <span ng-if="status.type == 'MENTION_FRIEND'" translate="status.follower">New follower</span>
+        <p compile="vm.status.content"></p>
+        <p ng-if="vm.status.replyToUsername">
+            <span class="ios-android-share"></span>
+            <span translate="status.reply">In reply to </span>
+            <span class="link-span" ng-click="vm.goToConversation(vm.status.replyTo)">@{{ vm.status.replyToUsername }}</span>
+        </p>
+        <p ng-repeat="attachment in vm.status.attachments">
+            <a ng-href="{{ vm.buildAttachmentUrl(attachment) }}">
+                <i class="ion-document-text"></i> {{ attachment.filename }}
+            </a>
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-25 button button-clear ion-chatbox tatami-button" ng-click="vm.postReply()"></div>
+        <div class="col-25 button button-clear ion-star tatami-button" ng-click="vm.favorite()" ng-class="{ 'button-energized': vm.status.favorite }"></div>
+        <div class="col-25 button button-clear ion-more tatami-button" ng-if="!vm.isCurrentUser" ng-click="popover.show($event)"></div>
+        <div class="col-25 button button-clear ion-trash-a tatami-button" ng-if="vm.isCurrentUser" ng-click="vm.remove()"></div>
+    </div>
+</span>
+
+

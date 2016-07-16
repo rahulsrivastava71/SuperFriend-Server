@@ -1,0 +1,19 @@
+{
+    "status": {
+        "share": {
+            "title": "a partagé",
+            "mention": "Votre status a été partagé"
+        },
+        "reply": "En réponse à ",
+        "follower": "Nouvel abonné",
+        "delete": "Êtes-vous sûr de vouloir supprimer ce statut?",
+        "report" : "Supprimer",
+        "reportMessage": "Ce statut a été signalé",
+        "block": {
+            "reportUser": "Signaler cet utilisateur",
+            "reportStatus": "Signaler ce statut",
+            "blockUser": "Bloquer cet utilisateur",
+            "delete": "Supprimer"
+        }
+    }
+}

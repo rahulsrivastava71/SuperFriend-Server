@@ -1,0 +1,17 @@
+{
+    "user": {
+        "profile": {
+            "title": "Profile"
+        },
+        "follow": "Follow",
+        "unfollow": "Unfollow",
+        "block":{
+            "success": "You have blocked this User. You won't see his posts anymore.",
+            "title": "Block"
+        } ,
+        "unblock": {
+            "success": "You unblocked this user.",
+            "title": "Unblock"
+        }
+    }
+}

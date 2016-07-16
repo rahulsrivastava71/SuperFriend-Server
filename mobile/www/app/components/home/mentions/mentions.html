@@ -1,0 +1,6 @@
+<ion-view view-title="{{ 'tab.mentions' | translate }}">
+    <tatami-status-list statuses="vm.mentioned"
+                        current-user="vm.currentUser"
+                        tatami-refresher="vm.getNewStatuses()"
+                        tatami-infinite-refresher="vm.getOldStatuses(finalStatus)"></tatami-status-list>
+</ion-view>

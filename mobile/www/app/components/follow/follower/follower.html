@@ -1,0 +1,10 @@
+<ion-view view-title="{{ 'tab.follower' | translate }}">
+    <ion-content>
+        <ion-refresher on-refresh="vm.getNewFollowers()"></ion-refresher>
+        <ion-list>
+            <div ng-repeat="user in vm.followers">
+                <tatami-user user="user"></tatami-user>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

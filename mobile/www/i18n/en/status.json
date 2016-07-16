@@ -1,0 +1,20 @@
+{
+    "status": {
+        "share": {
+            "title": "shared",
+            "mention": "Your status has been shared"
+        },
+        "reply": "In reply to ",
+        "follower": "New follower",
+        "delete": "Are you sure you want to delete the status?",
+        "report" : "Report",
+        "reportMessage": "This status has been reported",
+        "block": {
+            "reportUser": "Report User",
+            "reportStatus": "Report Status",
+            "blockUser": "Hide from timeline",
+            "delete": "Delete"
+        }
+    }
+
+}

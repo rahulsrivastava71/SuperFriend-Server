@@ -1,0 +1,11 @@
+{
+    "post": {
+        "title": "Post",
+        "message": "Post Here...",
+        "progress": "Post in progress...",
+        "error": {
+            "message": "Something went wrong. Returning to Timeline",
+            "truncated": "Your post has been truncated to remain under the max length"
+        }
+    }
+}

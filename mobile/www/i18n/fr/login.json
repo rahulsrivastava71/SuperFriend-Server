@@ -1,0 +1,18 @@
+{
+    "login": {
+        "title": "Login",
+        "email": "E-mail",
+        "password": "Mot de passe",
+        "google": "Google Login",
+        "success": "Connexion effectuée !",
+        "failed": "Echec de connexion",
+        "progress": "Connexion en cours...",
+        "googleUnavaible": "Google Login non disponible sur ce serveur",
+        "tos": "conditions d'utilisation",
+        "accept": "Accepter les",
+        "endpoint": {
+            "current": "Serveur Actuel:",
+            "modify": "Modifier"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "more": {
+        "title": "Plus d'options",
+        "company": "Timeline Entreprise",
+        "settings": "Paramètres",
+        "blockedusers": {
+            "manage": "Gérer les utilisateurs bloqués",
+            "no": "Vous n'avez bloqué aucun utilisateur"
+        },
+        "logout": "Déconnexion",
+        "language": {
+            "change": "Langue",
+            "english": "Anglais",
+            "french": "Français"
+        }
+    }
+
+}

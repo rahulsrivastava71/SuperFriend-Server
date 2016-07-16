@@ -1,0 +1,18 @@
+{
+    "more": {
+        "title": "More Options",
+        "company": "Company Timeline",
+        "settings": "Settings",
+        "blockedusers": {
+            "manage": "Manage your blocked users",
+            "no": "You don't have any blocked user"
+        },
+        "logout": "Logout",
+        "language": {
+            "change": "Language",
+            "english": "English",
+            "french": "French"
+        }
+    }
+
+}
