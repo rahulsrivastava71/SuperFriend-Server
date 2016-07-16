@@ -4,7 +4,7 @@ SuperFriend
 Presentation
 ------------------
 
-SocialFriend is an Open Source enterprise social network.
+SuperFriendis an Open Source enterprise social network.
 
 
 - HTML5, [AngularJS](https://angularjs.org/) and [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
