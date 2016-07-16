@@ -1,21 +1,17 @@
-Tatami
+SuperFriend
 ================
 
 Presentation
 ------------------
 
-Tatami is an Open Source enterprise social network.
+SocialFriend is an Open Source enterprise social network.
 
-A public installation of Tatami is provided by [Ippon Technologies](http://www.ippon.fr) at : [https://tatami.ippon.fr](https://tatami.ippon.fr)
-
-Tatami is made with the following technologies :
 
 - HTML5, [AngularJS](https://angularjs.org/) and [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
 - [The Spring Framework](http://www.springsource.org/)
 - [Apache Cassandra](http://cassandra.apache.org/)
 - [Elastic Search](http://www.elasticsearch.org/)
 
-Tatami is developed by [Ippon Technologies](http://www.ippon.fr)
 
 
 Installation for developers
@@ -26,18 +22,17 @@ Installation for developers
 - Clone, fork or download the source code from this Github page
 - Install [Maven 3](http://maven.apache.org/)
 - Install [npm](https://www.npmjs.com/)
-- Point your terminal to the directory you cloned Tatami to.
+- Point your terminal to the directory you cloned SuperFriend to.
     - `cd web`
     - Type `npm install`
     - You may need to give root user permissions: `sudo !!`
     - `cd ..`
 - Run Cassandra with Maven : `mvn cassandra:run`
-- Run Jetty from tatami/web with Maven: `mvn jetty:run`
+- Run Jetty from SuperFriend/web with Maven: `mvn jetty:run`
 - Connect to the application at http://127.0.0.1:8080
 
 
-To create users, use the registration form. As we have not configured a SMTP server (you can configure it in src/main/resources/META-INF/tatami/tatami.properties - see below "installation for production use" for more options), the validation URL as well as the password will not be e-mailed to you, but you can see them in the log (look at the Jetty console output).
-
+To create users, use the registration form. As we have not configured a SMTP server.
 ### Using Tomcat instead of Jetty
 
 If you want to use Tomcat instead of Jetty (which works better in development mode on Windows), just use :
@@ -58,17 +53,8 @@ export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:
 
 ### Cassandra troubleshooting
 
-On Mac OS X, you should use JDK 6 and not JDK 7, see [issue #281](https://github.com/ippontech/tatami/issues/281#issuecomment-12430701).
+On Mac OS X, you should use JDK 6 and not JDK 7,
 
-
-How to Contribute
----------------------------------------
-In order to assure code quality, Ippon manages the pull requests for the project, and upholds certain rules regarding how individuals may contribute. 
-You may find these rules in your Tatami installation in the file `CONTRIBUTING.md`.
-
-
-Installation for production use
----------------------------------------
 
 ### Cassandra installation
 
@@ -76,21 +62,21 @@ Installation for production use
 - Install Cassandra : the application will work fine with just one node, but ideally you should have a cluster with at least 3 or 5 nodes
 - Cassandra is configured with its cassandra.yaml file : don't forget to backup your "data" and "commitlog" directories
 
-### Tatami installation
+### SuperFriend installation
 
-In order to use a stable version, use one of the [available tags](https://github.com/ippontech/tatami/tags).
+In order to use a stable version, use one of the [available tags](https://github.com/SuperFriend.com/SuperFriend/tags).
 
-Tatami can be configured with the src/main/resources/META-INF/tatami/tatami.properties file. You can configure this file in 2 ways :
+SuperFriend can be configured with the src/main/resources/META-INF/SuperFriend/SuperFriend.properties file. You can configure this file in 2 ways :
 
-- Edit the file in your own Tatami fork
+- Edit the file in your own SuperFriend fork
 - Properties in this file are replaced at build time by Maven : you can set up your own Maven profile with your specific properties
 
-Once Tatami is started, you will be able to check your properties at runtime in the Administration page.
+Once SuperFriend is started, you will be able to check your properties at runtime in the Administration page.
 
-To deploy Tatami :
+To deploy SuperFriend :
 
-- Create the Tatami WAR file : `mvn package`
-- The WAR file will be called "root.war", as Tatami should be run as the root application (on the "/" Web context)
+- Create the SuperFriend WAR file : `mvn package`
+- The WAR file will be called "root.war", as SuperFriend should be run as the root application (on the "/" Web context)
 - Deploy the WAR file on your favorite Java EE server
 - The WAR has been tested on Jetty 8 and Tomcat 7, and should work fine on all Java EE servers
 
@@ -107,10 +93,10 @@ Launching stress tests
 Stress tests are done with [Apache JMeter](http://jmeter.apache.org/).
 
 - Launch Cassandra
-- Run Tatami from Maven with the `stress-tests` profile : `mvn jetty:run -Pstress-tests`
+- Run SuperFriend from Maven with the `stress-tests` profile : `mvn jetty:run -Pstress-tests`
 - Launch JMeter
-- Run the `src/test/jmeter/tatami-create-users.jmx` script : it will create 200 normal users, which each has 200 follower users
-- Run the stress test : `src/test/jmeter/tatami-stress-test.jmx`
+- Run the `src/test/jmeter/SuperFriend-create-users.jmx` script : it will create 200 normal users, which each has 200 follower users
+- Run the stress test : `src/test/jmeter/SuperFriend-stress-test.jmx`
 
 Launching functional tests
 ---------------------------------------
@@ -119,7 +105,7 @@ Functional tests are a work in progress, you do not have to run them in order to
 
 Requirement : all components must run on localhost :
 
-- for LDAP authentication, the tests starts the LDAP server that the Tatami server will use
+- for LDAP authentication, the tests starts the LDAP server that the SuperFriend server will use
 - for fixture setup and assertions, the test connects directly to the local cassandra
 
 Launching UI Tests from maven :
@@ -127,7 +113,7 @@ Launching UI Tests from maven :
 - add this profile on your settings.xml :
 ```xml
 <profile>
-  <id>tatami</id>
+  <id>SuperFriend</id>
   <activation>
     <activeByDefault>true</activeByDefault>
   </activation>
@@ -151,22 +137,9 @@ Launching UI Tests from your IDE :
 
 - Enable a groovy plugin on your IDE
 - Activate maven profile "uitest" or add src/integration/* in your classpath
-- Run Tatami with Maven : `mvn cassandra:delete cassandra:start jetty:run -Djetty.scanIntervalSeconds=0 -Puitest`
-- Run Specs (in src\integration\java\fr\ippon\tatami\uitest) as Junit Tests from your IDE
+- Run SuperFriend with Maven : `mvn cassandra:delete cassandra:start jetty:run -Djetty.scanIntervalSeconds=0 -Puitest`
+- Run Specs (in src\integration\java\fr\server\SuperFriend\uitest) as Junit Tests from your IDE
   => you have to set adequate system properties to your running configurations (the same as those that are necessary in setting.xml for maven : see above)
-
-
-Thanks
-------
-
-Jetbrains is providing us free [Intellij IDEA](http://www.jetbrains.com/idea/) licenses, 
-which definitely allows us to be more productive and have more fun on the project!
-
-YourKit is kindly supporting open source projects with its full-featured Java Profiler.
-YourKit, LLC is the creator of innovative and intelligent tools for profiling
-Java and .NET applications. Take a look at YourKit's leading software products:
-[YourKit Java Profiler](http://www.yourkit.com/java/profiler/index.jsp) and
-[YourKit .NET Profiler](http://www.yourkit.com/.net/profiler/index.jsp).
 
 License
 -------
